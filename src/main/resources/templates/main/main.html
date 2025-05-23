@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>즐거움은 미루지 마세요. Tripjoy</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    
+    <header class="header animated headroom--top headroom--not-bottom">
+        <!-- 상단 메뉴바 시작 -->
+        <nav class="hd_wrap center">
+            <h1>
+                <a href="/html/main.html">
+                    <img src="/imgs/logo/logo.svg" alt="트립조이">
+                </a>
+            </h1>
+
+            <ul>
+                <li><a href="">인기 국가</a></li>
+                <li><a href="">인기 도시</a></li>
+                <li><a href="">인기 랜드마크</a></li>
+                <!-- <li><a href="">둘러보기</a></li> -->
+            </ul>
+
+            <ul id="menu2">
+                <li><a href="javascript:;" class="lang-button">대한민국</a></li>
+                <li><a href="javascript:;" class="lang-button">KRW</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">최근 본 액티비티</a></li> 
+                <li id="login"><a href="">로그인 / 회원가입</a></li>
+            </ul>
+        </nav>
+    </header>
+        <!-- 상단 메뉴바 끝 -->
+        
+        <!-- 메인배너 시작 -->
+        <section class="main_banner">
+            <div class="main_banner_swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="swiper_wrapper"> <!-- 클래스 뒤 체크 -->
+                  
+                    <!-- 슬라이드 시작 -->
+                    <div class="main_banner_slide">
+                        <img src="../imgs/main/메인배너1.png" alt="매인배너 1" style="width: 100%;">
+                        <div class="main_banner_weap center">
+                            <h4>지금, 당신을 위한 새로운 여정이 펼쳐집니다.</h4>
+                            <h2>계절이 바뀌듯 마음도 움직이는 순간,<br>
+                                익숙한 하루를 벗어나 특별한 액티비티를 만나보세요.</h2>
+                        </div>
+                        
+                       
+                    </div>
+
+                    <!-- 슬라이드 버튼 -->
+                    <div class="main_banner_page swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                        <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span>
+                        <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span>
+                        <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 3" aria-current="true"></span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- 메인 배너 끝 -->
+
+        <!-- 검색 창 -->
+        <div class="search_area">
+            <span class="search_icon_box">
+                <svg width="20" height="20" viewBox="0 0 48 48" fill="none" class="search_icon">
+                    <circle cx="22"  cy="22" r="18" stroke="#A8A8A8" stroke-width="3.6"></circle>
+                    <path d="M35 35L44 44" stroke="#A8A8A8" stroke-width="3.6" stroke-linecap="round"></path>
+                </svg>
+                <input type="text" placeholder="어디로 떠나고 싶으세요?">
+                <button type="submit">검색</button>
+            </span>
+        </div>
+        <!-- 검색 창 끝 -->
+
+        <!-- 메인 컨테이너 1 시작 -->
+        <div class="main_container">
+            <div class="main_container_box">
+
+                <div class="card">
+                    <img src="../imgs/main/paris.jpg" alt="파리">
+                </div>
+
+                <div class="card">
+                    <img src="../imgs/main/cebu.jpg" alt="세부">
+                </div>
+
+                <div class="card">
+                    <img src="../imgs/main/newyork.jpg" alt="뉴욕">
+                </div>
+
+                <div class="card">
+                    <img src="../imgs/main/bali.jpg" alt="발리">
+                </div>
+
+            </div>
+        </div>
+        <!-- 메인 컨테이너 1 끝 -->
+
+        <!-- 메인 컨테이너 2 시작 -->
+        <div class="main_container2">
+            <div class="main_container2_box">
+
+                <span class="container2_title">지금, 떠나고 싶은 순간을 위해</span>
+
+                <div class="container2_content">
+
+                    <!-- 왼쪽 텍스트 영역 -->
+                    <div class="content1_swiper">
+                        <div class="category_btn_full">
+                            <button class="category_btn active">몸도 마음도 시원한 힐링 액티비티</button>
+                            <button class="category_btn">자연과 함께하는 특별한 하루</button>
+                            <button class="category_btn">하늘 아래, 가장 자유로운 순간</button>
+
+                            <button class="more_btn">자세히 보기<span>→</span></button>
+
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽 카드 영역(js연결) -->
+                    <div class="container2_cards" id="cardContainer"></div>
+
+                    <!-- <button class="more_btn">자세히 보기<span>→</span></button> -->
+
+                </div>
+
+            </div>
+        </div>
+        <!-- 메인 컨테이너 2 끝 -->
+
+        <!-- 메인 컨테이너 3 시작 -->
+        <div class="main_container3">
+            <div class="main_container3_box">
+
+                <span class="container3_title">실시간 인기 급상승 UP 📈</span>
+
+                <div class="container3_container">
+                    
+                    <div class="container3_card">
+                        <img src="" alt="">
+                    </div>
+
+                    <div class="container3_card">
+                        <img src="" alt="">
+                    </div>
+
+                    <div class="container3_card">
+                        <img src="" alt="">
+                    </div>
+
+                    <div class="container3_card">
+                        <img src="" alt="">
+                    </div>
+
+                    <div class="container3_card">
+                        <img src="" alt="">
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- 메인 컨테이너 3 끝 -->
+
+        <!-- 메인 컨테이너 4 시작 -->
+        <div class="main_container4">
+            <div class="main_container4_box">
+
+                <span class="container4_title">프로모션</span>
+
+                <div class="container4_container">
+                    <div class="container4_card">
+                        <img src="imgs/promo1.jpg" alt="프로모션1">
+                    </div>
+
+                    <div class="container4_card highlight">
+                        <img src="imgs/promo2.jpg" alt="프로모션2">
+                    </div>
+
+                    <div class="container4_card">
+                        <img src="imgs/promo3.jpg" alt="프로모션3">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 메인 컨테이너 4 끝 -->
+
+        <!-- 기업정보 영역 시작 -->
+        <section class="company-info-section">
+            <div class="company-info-container">
+
+                <!-- 구분선 -->
+                <div class="divider-line"></div>
+
+                <!-- 왼쪽: 링크 그룹 -->
+                <div class="footer-left">
+                    <div class="footer-column">
+                        <span class="footer-title">회사 소개</span>
+                        <ul class="footer-list">
+                            <li>트립조이 소개</li>
+                            <li><a href="https://m.blog.naver.com/PostList.naver?blogId=totolo402">트립조이 블로그</a></li>
+                            <li><a href="/ko/blog/">트립조이 가이드</a></li>
+                            <li>채용정보</li>
+                            <li>지속가능성</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <span class="footer-title">파트너십</span>
+                        <ul class="footer-list">
+                            <li>머천트 입점 문의</li>
+                            <li>머천트 포털</li>
+                            <li>제휴 파트너 프로그램</li>
+                            <li>인플루언서 프로그램</li>
+                            <li>에이전트 B2B 마켓 플레이스</li>
+                            <li>트립조이의 파트너사 되기</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <span class="footer-title">이용약관</span>
+                        <ul class="footer-list">
+                            <li>약관</li>
+                            <li>개인정보처리방침</li>
+                            <li>쿠키 정책</li>
+                            <li>버그 바운티 프로그램</li>
+                            <li>위치기반서비스 이용약관</li>
+                            <li>동물복지 정책</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 오른쪽: 결제 수단 -->
+                <div class="footer-right">
+                    <span class="footer-title">결제 수단</span>
+                    <ul class="payment-list">
+                        <li><img src="../imgs/main/visa.png" alt="Visa"></li>
+                        <li><img src="../imgs/main/master.png" alt="MasterCard"></li>
+                        <li><img src="../imgs/main/jcb.png" alt="JCB"></li>
+                        <li><img src="../imgs/main/american.png" alt="American Express"></li>
+                        <li><img src="../imgs/main/paypal.png" alt="PayPal"></li>
+                        <li><img src="../imgs/main/payco.png" alt="Payco"></li>
+                        <li><img src="../imgs/main/applepay.png" alt="Apple Pay"></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        <!-- 기업정보 영역 끝 -->
+
+        <!-- footer 시작 -->
+        <footer class="footer">
+            <div class="main_center">
+                <a href="/index.php"><img src="../imgs/logo/logow.svg" alt="트립조이" width="150px"></a>
+                <p>
+                    상호명: 트립조이&nbsp;&nbsp;|&nbsp;&nbsp;대표자: 이슬<br>
+                    사업자번호: 924-98-980924&nbsp;&nbsp;|&nbsp;&nbsp;주소: 인천광역시 연수구 벚꽃로&nbsp;&nbsp;|&nbsp;&nbsp;대표번호: 010-1998-0924
+                </p>
+                <small>COPYRIGHT (C) 2025 트립조이. ALL RIGHT RESERVED</small>
+            </div>
+        </footer>
+        <!-- footer 끝-->
+
+        <!-- 퀵 메뉴 -->
+        <aside class="quick_menu">
+            <div class="quick_menu_con"></div>
+            <a href="#top"><img src="../imgs/main/quick_menu_top.svg" alt="상단바로가기" title=""></a>
+        </aside>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 메인 컨테이너 2 -->
+        <script>
+            const data = {
+                '힐링': [
+                    { title: '숲속 명상', img: 'forest.jpg' },
+                    { title: '스파 테라피', img: 'spa.jpg' },
+                    { title: '요가 클래스', img: 'yoga.jpg' }
+                ],
+                '자연': [
+                { title: '산악 하이킹', img: 'mountain.jpg' },
+                { title: '강가 피크닉', img: 'river.jpg' },
+                { title: '숲속 캠핑', img: 'camping.jpg' }
+                ],
+                '하늘': [
+                { title: '패러글라이딩', img: 'paragliding.jpg' },
+                { title: '열기구 체험', img: 'balloon.jpg' },
+                { title: '스카이다이빙', img: 'skydiving.jpg' }
+                ]
+            };
+
+            const buttons = document.querySelectorAll('.category_btn');
+            const container = document.getElementById('cardContainer');
+
+            function renderCards(categoryKey) {
+
+                const cards = data[categoryKey];
+                container.innerHTML = ''; 
+
+                cards.forEach(card => {
+
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'container2_cards_card';
+                cardDiv.innerHTML = `
+                    <img src="imgs/${card.img}" alt="${card.title}">
+                    <p>${card.title}</p>
+                `;
+                container.appendChild(cardDiv);
+                });
+            }
+
+            // 버튼 클릭 이벤트 연결
+            buttons.forEach(button => {
+
+                button.addEventListener('click', () => {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                if (button.innerText.includes('힐링')) renderCards('힐링');
+                else if (button.innerText.includes('자연')) renderCards('자연');
+                else if (button.innerText.includes('하늘')) renderCards('하늘');
+                });
+            });
+
+            
+            renderCards('힐링');
+        </script>
+
+
+    
+
+
+</body>
+</html>
