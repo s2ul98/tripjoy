@@ -1,5 +1,5 @@
 package templates.main;
 
-public class Aa {
+public class Ss {
 
 }
