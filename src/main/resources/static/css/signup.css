@@ -1,0 +1,238 @@
+.header {
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 101;
+    transition: all 0.5s;
+    background-color: transparent;
+}
+
+.header.headroom--not-top {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.hd_wrap {
+    display: flex;
+    justify-content: space-between;
+    height: 103px;
+    align-items: center;
+}
+.hd_wrap > ul {
+    display: flex;
+    list-style: none;
+}
+.hd_wrap > ul > li {
+    margin-right: 30px;
+}
+.hd_wrap > ul > li:last-child {
+    margin-right: 0px;
+}
+.hd_wrap > ul > li > a {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    text-decoration: none; 
+}
+.hd_wrap > ul > li > a::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    transition: all 0.2s;
+}
+
+.hd_wrap > ul > li > a:hover::after {
+    width: 100%;
+}
+
+.hd_wrap h1 img {
+  display: block;
+  height: 30px; 
+  margin-left: 170px;
+}
+
+#menu2 {
+    margin: 100px;
+}
+
+#menu2 select {
+  font-size: 16px;
+  color: #000000;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* #login:hover {
+  color: #3677F6;
+  border-color: #3677F6;
+} */
+
+/* 로고 */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0 40px;
+}
+.logo img {
+  height: 70px;
+}
+
+/* text */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* 입력박스 */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.input_item {
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: border 0.3s ease;
+}
+
+.input_item input {
+  width: 100%;
+  padding: 24px 20px 8px 20px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.input_item input::placeholder {
+  color: #DADADA;
+}
+
+.text_label {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 11px;
+  color: #666;
+  background-color: #fff;
+  padding: 0 4px;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.input_item input:focus + .text_label {
+  color: #3677F6;
+}
+
+.email_flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email_domain {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.email_domain .at {
+  font-size: 16px;
+  color: #333;
+}
+
+.email_domain select {
+  font-size: 14px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
+}
+
+.domain_box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  margin-right: 50px;
+  margin-top: 10px;
+}
+
+/* 약관 + 버튼 */
+.terms_box {
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.terms_list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.terms_list li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #111;
+}
+
+.terms_list input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.terms_notice {
+  font-size: 13px;
+  color: #bbb;
+  margin-bottom: 24px;
+}
+
+.submit_btn {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #999;
+  background-color: #eee;
+  border: none;
+  border-radius: 12px;
+}
+
+.submit_btn:hover {
+  color: #ffffff;
+  background-color: #3677F6;
+  cursor: pointer;
+}
+
+/* 비번 눈 */
+.btn_view {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn_view img {
+  width: 24px;
+  height: 24px;
+}

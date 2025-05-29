@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>즐거움은 미루지 마세요. Tripjoy</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/login.js"></script>
+</head>
+<body>
+
+     <header class="header animated headroom--top headroom--not-bottom">
+        <!-- 상단 메뉴바 시작 -->
+        <nav class="hd_wrap center">
+            <h1>
+                <a href="/html/main.html">
+                    <img src="/imgs/logo/logo.svg" alt="트립조이">
+                </a>
+            </h1>
+
+            <ul>
+                <li><a href="">인기 국가</a></li>
+                <li><a href="">인기 도시</a></li>
+                <li><a href="">인기 랜드마크</a></li>
+                <!-- <li><a href="">둘러보기</a></li> -->
+            </ul>
+
+            <ul id="menu2">
+                <li><select class="lang-select">
+                    <option value="kr">대한민국</option>
+                    <option value="us">미국</option>
+                    <option value="jp">일본</option>
+                    <option value="cn">중국</option>
+                </select></li>
+
+                <li><select class="currency-select">
+                    <option value="krw">KRW</option>
+                    <option value="usd">USD</option>
+                    <option value="jpy">JPY</option>
+                    <option value="eur">EUR</option>
+                </select></li>
+
+                <li><a href="">FAQ</a></li>
+                <li><a href="">최근 본 액티비티</a></li> 
+                <li id="login"><a href="/html/login.html">로그인 / 회원가입</a></li>
+            </ul>
+
+        </nav>
+    </header>
+        <!-- 상단 메뉴바 끝 -->
+
+
+    <!-- 로고 -->
+    <div class="logo">
+        <img src="/imgs/logo/logo.svg" alt="Tripjoy">
+    </div>
+
+    <!-- 로그인 시작 -->
+    <div class="panel_wrap">
+        <div class="panel_item">
+
+            <!-- id,pw 입력창 -->
+            <div class="login_form">
+                <div class="login_box">
+
+                    <!-- id -->
+                    <div class="input_item id on" id="input_item_id">
+                        <input type="text" id="id" name="id" accesskey="L" maxlength="41" autocapitalize="none" value="" title="아이디" class="input_id" aria-label="아이디 또는 전화번호">
+                        <label for="id" class="text_label" id="id_label" aria-hidden="true">이메일</label>
+                        <!-- <button type="button" class="btn_delete" id="id_clear" style="display: block;">
+                            <span class="icon_delete"><span class="blind">삭제</span></span>
+                        </button> -->
+                    </div>
+
+                    <!-- pw -->
+                    <div class="input_item pw on" id="input_item_pw">
+                        <input type="password" id="pw" name="pw" title="비밀번호" class="input_pw" maxlength="16" aria-label="비밀번호">
+                        <label for="pw" class="text_label" id="pw_label" aria-hidden="true">비밀번호</label>
+                        
+                        <!-- 보기/숨기기 아이콘 -->
+                        <button type="button" class="btn_view" id="togglePassword">
+                            <img src="/imgs/icon/eye-off.svg" alt="비밀번호 숨김" id="eyeIcon">
+                        </button>
+                    </div>
+                        
+                        <!-- <button type="button" class="btn_delete" id="pw_clear" style="display: block;">
+                            <span class="icon_delete"><span class="blind">삭제</span></span>
+                        </button> -->
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 로그인 상태 유지 -->
+            <div class="login_keep_wrap" id="login_keep_wrap">
+                <div class="keep_check">
+                    <input type="checkbox" id="keep" name="nvlong" class="input_keep" value="off">
+                    <label for="keep" class="keep_text">아이디/비밀번호 저장</label>
+                </div>
+            </div>
+
+            <!-- 로그인 버튼 -->
+            <div class="btn_login_wrap">
+                <button type="submit" class="btn_login next_step nlog-click" id="log.login">
+                    <span class="btn_text" id="log.login.text">로그인</span>     
+                </button>
+            </div>
+
+            <!-- 소셜 로그인 -->
+            <div class="social_login_wrap" id="passkey.divider">
+                <span class="text">소셜 로그인</span>
+            
+                <div class="social_login_form">
+
+                    <!-- 카카오 -->
+                    <button class="social_circle kakao" aria-label="카카오 로그인">
+                        <img src="/imgs/icon/kakao.svg" alt="카카오 로그인">
+                        <!-- <span>카카오 로그인</span> -->
+                    </button>
+
+                    <!-- 구글 -->
+                    <button class="social_circle google" aria-label="구글 로그인">
+                        <img src="/imgs/icon/google.svg" alt="구글 로그인">
+                        <!-- <span>구글 로그인</span> -->
+                    </button>
+
+                    <!-- 애플 -->
+                    <button class="social_circle apple" aria-label="애플 로그인">
+                        <img src="/imgs/icon/apple.svg" alt="애플 로그인">
+                        <!-- <span>애플 로그인</span> -->
+                    </button>
+                    
+                </div> 
+            </div>
+
+            <!-- 메세지
+            <div class="login_error_wrap" id="err_capslock" style="display: none;">
+                <div class="error_message">
+                    <p><strong>Caps Lock</strong>이 켜져 있습니다.</p>
+                </div>
+            </div>
+
+            <div class="login_error_wrap" id="err_empty_id" style="display: none;">
+                <div class="error_message">
+                    <strong>아이디 또는 전화번호</strong>를 입력해 주세요.
+                </div>
+            </div>
+
+            <div class="login_error_wrap" id="err_empty_pw" style="display: none;">
+                <div class="error_message">
+                        <strong>비밀번호</strong>를 입력해 주세요.
+                </div>
+            </div>
+            
+            <div class="login_error_wrap" id="err_common" style="display:none;">
+                <div class="error_message" style="width:100%"></div>
+            </div> -->
+
+        </div>
+    </div>
+
+    <!-- 하단 링크 -->
+    <div style="text-align: center; font-size: 13px; color: #aaa; margin-top: 20px;">
+        <a href="#">비밀번호 찾기</a> |
+        <a href="#">아이디 찾기</a> |
+        <a href="../html/signup.html">회원가입</a>
+    </div>
+
+    <!-- 로그인 끝 -->
+    
+    <!-- footer 시작 -->
+    <!-- <footer class="footer">
+        <div class="main_center">
+            <a href="/index.php"><img src="../imgs/logo/logow.svg" alt="트립조이" width="150px"></a>
+            <p>
+                상호명: 트립조이&nbsp;&nbsp;|&nbsp;&nbsp;대표자: 이슬<br>
+                사업자번호: 924-98-980924&nbsp;&nbsp;|&nbsp;&nbsp;주소: 인천광역시 연수구 벚꽃로&nbsp;&nbsp;|&nbsp;&nbsp;대표번호: 010-1998-0924
+            </p>
+            <small>COPYRIGHT (C) 2025 트립조이. ALL RIGHT RESERVED</small>
+        </div>
+    </footer> -->
+    <!-- footer 끝 -->
+
+    <script>
+     // 메뉴바
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 50) {
+                    header.classList.add('headroom--not-top');
+                    } else {
+                    header.classList.remove('headroom--not-top');
+                    }
+                });
+    </script>
+
+</body>
+</html>

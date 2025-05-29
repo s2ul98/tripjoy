@@ -1,0 +1,279 @@
+.header {
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 101;
+    transition: all 0.5s;
+    background-color: transparent;
+}
+
+.header.headroom--not-top {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hd_wrap {
+    display: flex;
+    justify-content: space-between;
+    height: 103px;
+    align-items: center;
+}
+.hd_wrap > ul {
+    display: flex;
+    list-style: none;
+}
+.hd_wrap > ul > li {
+    margin-right: 30px;
+}
+.hd_wrap > ul > li:last-child {
+    margin-right: 0px;
+}
+.hd_wrap > ul > li > a {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    text-decoration: none; 
+}
+.hd_wrap > ul > li > a::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    transition: all 0.2s;
+}
+.hd_wrap > ul > li > a:hover::after {
+    width: 100%;
+}
+
+.hd_wrap h1 img {
+  display: block;
+  height: 30px; 
+  margin-left: 170px;
+}
+
+#menu2 {
+    margin: 100px;
+}
+
+#menu2 select {
+  font-size: 16px;
+  color: #000000;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* #login:hover {
+  color: #3677F6;
+  border-color: #3677F6;
+} */
+
+/* 로고 */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 150px 0 40px;
+}
+.logo img {
+  height: 70px;
+}
+
+/* 로그인 박스 */
+.panel_wrap {
+  width: 460px;
+  margin: 60px auto 0;
+  background: #fff;
+  border: 1px solid #e1e3e5;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* 입력 박스 */
+.input_item {
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: border 0.3s ease;
+}
+
+.input_item input {
+  width: 100%;
+  padding: 24px 16px 8px 16px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.input_item:focus-within {
+  border: 2px solid #3677F6;
+}
+
+.text_label {
+  position: absolute;
+  top: 8px;            /* 위쪽에 고정 */
+  left: 16px;
+  font-size: 11px;     /* 작게 시작 */
+  color: #333;         /* 기본 글자색 */
+  pointer-events: none;
+  background: #fff;
+  padding: 0 4px;
+  transition: color 0.2s ease;
+}
+
+
+.input_item input:focus + .text_label {
+  color: #3677F6;
+}
+
+/* 비밀번호 눈 */
+.btn_view {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn_view img {
+  width: 24px;
+  height: 24px;
+}
+
+/* 아/비 저장 */
+.login_keep_wrap {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0;
+}
+
+.keep_check label {
+  font-size: 14px;
+  color: #555;
+  margin-left: 8px;
+}
+
+/* 로그인 버튼 */
+.btn_login_wrap {
+  margin-top: 24px;
+}
+
+.btn_login {
+  width: 100%;
+  background-color: #3677F6;
+  color: #fff;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn_login:hover {
+  background-color: #2c64d9;
+}
+
+/* 소셜 로그인 */
+.social_login_wrap {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.social_login_wrap .text {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+.social_login_form {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social_login_form div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.social_login_form img {
+  width: 24px;
+  height: 24px;
+}
+
+.social_circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: box-shadow 0.2s ease;
+}
+
+.social_circle:hover {
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+}
+
+/* 각 플랫폼에 맞는 배경 이미지 설정 */
+.kakao {
+  background-color: #FEE500;
+  background-image: url('/imgs/kakao-icon.svg');
+}
+
+.google {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  background-image: url('/imgs/google-icon.svg');
+}
+
+.apple {
+  background-color: #000;
+  background-image: url('/imgs/apple-icon.svg');
+}
+
+
+/* foorter
+.footer {
+    background-color: #242b36;
+    padding: 100px 0;
+    margin-top: 100px;
+}
+
+.main_center {
+  padding: 0;
+  margin-left: 170px;
+}
+
+.footer p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #f4f4f4;
+    margin: 30px 0px;
+    line-height: 160%;
+}
+.footer small {
+    font-size: 14px;
+    font-weight: 400;
+    color: #b7b7b7;
+} */

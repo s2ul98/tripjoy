@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>즐거움은 미루지 마세요. Tripjoy</title>
+    <link rel="stylesheet" href="/css/signup.css">
+    <script src="/js/signup.js"></script>
+</head>
+<body>
+
+    <header class="header animated headroom--top headroom--not-bottom">
+
+        <!-- 상단 메뉴바 시작 -->
+        <nav class="hd_wrap center">
+            <h1>
+                <a href="/html/main.html">
+                    <img src="/imgs/logo/logo.svg" alt="트립조이">
+                </a>
+            </h1>
+
+            <ul>
+                <li><a href="">인기 국가</a></li>
+                <li><a href="">인기 도시</a></li>
+                <li><a href="">인기 랜드마크</a></li>
+                <!-- <li><a href="">둘러보기</a></li> -->
+            </ul>
+
+            <ul id="menu2">
+                <li><select class="lang-select">
+                    <option value="kr">대한민국</option>
+                    <option value="us">미국</option>
+                    <option value="jp">일본</option>
+                    <option value="cn">중국</option>
+                </select></li>
+
+                <li><select class="currency-select">
+                    <option value="krw">KRW</option>
+                    <option value="usd">USD</option>
+                    <option value="jpy">JPY</option>
+                    <option value="eur">EUR</option>
+                </select></li>
+
+                <li><a href="">FAQ</a></li>
+                <li><a href="">최근 본 액티비티</a></li> 
+                <li id="login"><a href="../html/login.html">로그인 / 회원가입</a></li>
+            </ul>
+
+        </nav>
+    </header>
+        <!-- 상단 메뉴바 끝 -->
+
+        <!-- 로고 -->
+        <div class="logo">
+            <img src="/imgs/logo/logo.svg" alt="Tripjoy">
+        </div>
+
+        <h1>회원가입</h1>
+
+        <!-- 회원가입 -->
+        <div class="container">
+        <div class="inner">
+
+            <div class="content">
+            <form action="">
+
+                <!-- 이메일 -->
+                <div class="input_item">
+                    <label for="email" class="text_label">이메일</label>
+                    <div class="email_flex">
+                        <input type="text" id="email" placeholder="s2ul98" required>
+                        
+                        <div class="domain_box">
+                            <span class="at">@</span>
+                            <select id="email_domain" name="email_domain" required>
+                                <option value="naver.com">naver.com</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="daum.net">daum.net</option>
+                                <option value="">직접 입력</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div class="input_item">
+                    <input type="password" id="password" placeholder="영문/특수문자/숫자 중 2가지 이상 혼합 8~20자" required>
+                    <label for="password" class="text_label">비밀번호</label>
+                    <button type="button" class="btn_view" id="togglePassword1">
+                        <img src="../imgs/icon/eye-off.svg" alt="비밀번호 숨김" id="eyeIcon1">
+                    </button>
+                </div>
+
+                <!-- 비밀번호 재입력 -->
+                <div class="input_item">
+                    <input type="password" id="password_confirm" placeholder="영문/특수문자/숫자 중 2가지 이상 혼합 8~20자" required>
+                    <label for="password_confirm" class="text_label">비밀번호 재입력</label>
+                    <button type="button" class="btn_view" id="togglePassword2">
+                        <img src="../imgs/icon/eye-off.svg" alt="비밀번호 숨김" id="eyeIcon2">
+                    </button>
+                </div>
+
+                <!-- 이름 -->
+                <div class="input_item">
+                    <input type="text" id="name" placeholder=" " required>
+                    <label for="name" class="text_label">이름</label>
+                </div>
+
+                <!-- 생년월일 -->
+                <div class="input_item">
+                    <input type="text" id="birth" placeholder="8자리(YYYY/MM/dd)" required>
+                    <label for="birth" class="text_label">생년월일</label>
+                </div>
+
+                <!-- 닉네임 -->
+                <div class="input_item">
+                    <input type="text" id="nickname" placeholder=" " required>
+                    <label for="nickname" class="text_label">닉네임</label>
+                </div>
+
+                <!-- 휴대폰 번호 -->
+                <div class="input_item">
+                    <input type="text" id="phone" placeholder="‘-’를 제외한 숫자만 입력" required>
+                    <label for="phone" class="text_label">휴대폰 번호</label>
+                </div>
+
+                <div class="terms_box">
+                    <ul class="terms_list">
+
+                        <li><label><input type="checkbox" id="check_all"> 약관 전체 동의</label></li>
+                        <li><label><input type="checkbox" class="check_item"> (필수) 본인은 만 14세 이상입니다</label></li>
+                        <li><label><input type="checkbox" class="check_item"> (필수) 서비스 이용약관 동의</label></li>
+                        <li><label><input type="checkbox" class="check_item"> (필수) 개인정보 수집 및 이용 동의</label></li>
+                        <li><label><input type="checkbox" class="check_item"> (선택) 광고성 정보 수신 전체 동의</label></li>
+                    
+                    </ul>
+
+                    <p class="terms_notice">
+                        마케팅 정보 수집에 동의하시면, <br>이벤트 및 할인 혜택 안내를 빠르게 받아 보실 수 있습니다.
+                    </p>
+
+                    <button class="submit_btn">가입하기</button>
+                </div>
+
+
+            </form>
+            </div>
+            
+        </div>
+        </div>
+
+            <script>
+            // 메뉴바
+                    window.addEventListener('scroll', () => {
+                        const header = document.querySelector('.header');
+                        if (window.scrollY > 50) {
+                            header.classList.add('headroom--not-top');
+                            } else {
+                            header.classList.remove('headroom--not-top');
+                            }
+                        });
+            </script>
+
+
+
+    
+</body>
+</html>
