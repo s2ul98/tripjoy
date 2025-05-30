@@ -1,0 +1,401 @@
+.header {
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 101;
+    transition: all 0.5s;
+    background-color: transparent;
+}
+
+.header.headroom--not-top {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.hd_wrap {
+    display: flex;
+    justify-content: space-between;
+    height: 103px;
+    align-items: center;
+}
+
+.hd_wrap > ul {
+    display: flex;
+    list-style: none;
+}
+
+.hd_wrap > ul > li {
+    margin-right: 30px;
+}
+
+.hd_wrap > ul > li:last-child {
+    margin-right: 0px;
+}
+
+.hd_wrap > ul > li > a {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    text-decoration: none; 
+}
+
+.hd_wrap > ul > li > a::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    transition: all 0.2s;
+}
+
+.hd_wrap > ul > li > a:hover::after {
+    width: 100%;
+}
+
+.hd_wrap h1 img {
+  display: block;
+  height: 30px; 
+  margin-left: 170px;
+}
+
+#menu2 {
+    margin: 100px;
+}
+
+#menu2 select {
+  font-size: 16px;
+  color: #000000;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* #login:hover {
+  color: #3677F6;
+  border-color: #3677F6;
+} */
+
+/* 업체 상세 */
+.activity_detail_container {
+  width: 80%;
+  margin: 150px auto;
+
+}
+
+.title_section h2 {
+  font-size: 30px;
+  margin-bottom: 22px;
+}
+
+.rating {
+  font-size: 16px;
+  color: #333;
+}
+
+.location {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.image_slider {
+  width: 100%;
+  height: 400px; 
+  background-color: #000;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.slider_images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 패키지 */
+.package_section h3 {
+  font-size: 30px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.package_card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  background-color: #fff;
+}
+
+.tag_list span {
+  background-color: #eee;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-right: 6px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.package_title {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 6px;
+}
+
+.price_detail {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.price_select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.price_select p {
+  font-size: 16px;
+  color: gray;
+}
+
+.price_select span {
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 980px;
+}
+
+.price_select button {
+  background-color: #296CFF;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* 펼침 */
+.reservation_section {
+  display: none; 
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.package_section_line {
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+.reservation_section h3 {
+  font-size: 20px;
+  margin: 30px 0 20px 0;
+}
+
+.reservation_content {
+  display: flex;
+  gap: 40px;
+}
+
+.calendar_box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar_box label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.calendar {
+  width: 300px;
+  height: 30px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.info_box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.info_box label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.quantity_select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.minus_btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  background: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.plus_btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #3677F6;
+  color: #3677F6;
+  background: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.quantity {
+  font-size: 16px;
+}
+
+.total_price {
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.total_price strong {
+  font-weight: bold;
+}
+
+.action_btns {
+  display: flex;
+  gap: 10px;
+}
+
+.action_btns button {
+  flex: 1;
+  padding: 10px;
+  background-color: #3677F6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.action_btns button:hover {
+  background-color: #0e3075;
+}
+
+
+/* 기업정보 영역 */
+.company-info-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+}
+
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin-bottom: 40px;
+}
+
+.footer-left {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  min-width: 150px;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.footer-list a {
+  text-decoration: none;
+  color: #666;
+}
+
+.footer-right {
+  min-width: 200px;
+}
+
+.payment-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.payment-list img {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* foorter */
+.footer {
+    background-color: #242b36;
+    padding: 65px 0;
+    margin-top: 100px;
+}
+
+.main_center {
+  padding: 0;
+  margin-left: 170px;
+}
+
+.footer p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #f4f4f4;
+    margin: 30px 0px;
+    line-height: 160%;
+}
+.footer small {
+    font-size: 14px;
+    font-weight: 400;
+    color: #b7b7b7;
+}
