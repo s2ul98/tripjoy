@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>즐거움은 미루지 마세요. Tripjoy</title>
-    <link rel="stylesheet" href="/css/sub_3.css">
-    <script src="/js/sub_3.js"></script>
+    <link rel="stylesheet" href="../css/reservation_list.css">
+    <script src="../js/reservation_list.js"></script>
 </head>
 <body>
 
@@ -50,141 +50,61 @@
     </header>
     <!-- 상단 메뉴바 끝 -->
 
-    <!-- 업체 상세 -->
-    <div class="activity_detail_container">
+    <!-- 내정보 시작 -->
+    <div class="container">
 
-        <!-- 제목 및 별점 -->
-        <div class="title_section">
-            <h2>오사카 우메다 스카이 빌딩 & 우메다 공중정원 전망대 입장권</h2>
-            <div class="rating">
-                ⭐ <strong>4.8</strong> <span>(이용 후기 6K+ 건)</span>
-                <a href="https://www.google.com/maps/place/%EC%9A%B0%EB%A9%94%EB%8B%A4+%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%B9%8C%EB%94%A9/data=!4m2!3m1!1s0x0:0x57c2e32670decafd?sa=X&ved=1t:2428&ictx=111" class="location">&nbsp;우메다 스카이 빌딩</a>
-            </div>
-            
-        </div>
+        <!-- 좌측 프로필 영역 -->
+        <aside class="profile">
+            <div class="profile-pic"></div>
+            <h2>이슬 <span>S2ul</span></h2>
+            <p class="email">S2ul98@naver.com</p>
 
-        <!-- 슬라이드 배너 -->
-        <div class="image_slider">
-            <div class="slider_images">
-                <img src="../imgs/sub3/banner.svg" alt="우메다 스카이 빌딩">
-            </div>
-        </div>
+            <nav class="side-menu">
+                <ul>
+                <li>내 정보 변경</li>
+                <li>예약 관리</li>
+                <li>위시리스트</li>
+                <li>고객센터</li>
+                </ul>
+            </nav>
+        </aside>
 
-        <!-- 패키지 옵션 -->
-        <div class="package_section">
-
-            <h3>패키지 옵션</h3>
-
-            <!-- 1번 패키지 -->
-            <div class="package_card">
-
-                <div class="tag_list">
-                    <span>예약 즉시 확정</span>
-                    <span>24시간 전 취소 가능</span>
-                    <span>실물 티켓 교환 필수</span>
-                    <span>지정일 날짜에만 유효</span>
-                </div>
-
-                <div class="package_content">
-                    <p class="package_title">입장권</p>
-                    <p class="price_detail">성인 ₩ 19,100 ・ 아동(만 4~12세) ₩ 4,800</p>
-                    <div class="price_select">
-                        <p>패키지 정보 ></p>
-                        <span>₩ 19,100</span>
-                        <button>선택하기</button>
-                    </div>
-                </div>
-
-                <!-- 펼침 -->
-                <div class="reservation_section">
-                    
-                    <!-- 구분선 -->
-                    <div class="package_section_line"></div>
-
-                    <h3>날짜 & 수량 선택</h3>
-
-                    <div class="reservation_content">
-
-                        <!-- 왼쪽 : 달력 -->
-                        <div class="calendar_box">
-                            <label>방문 일자 선택</label>
-                            <input type="date" class="calendar">
-                        </div>
-
-                        <!-- 오른쪽 : 수량 -->
-                        <div class="info_box">
-
-                            <label>수량 선택</label>
-                            <div class="quantity_select">
-                                <button class="minus_btn">-</button>
-                                <span class="quantity">1</span>
-                                <button class="plus_btn">+</button>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- 구분선 -->
-                    <div class="package_section_line"></div>
-
-                    <!-- 하단 : 총 금액 -->
-                    <div class="total_price">
-                        총 금액 <strong>₩ 19,100</strong>
-                    </div>
-
-                    <div class="action_btns">
-                        <button class="cart_btn">장바구니 담기</button>
-                        <button class="reserve_btn">예약하기</button>
-                    </div>
-                </div>
-
-
+        <!-- 예약 관리 영역 -->
+        <main class="reservation">
+            <h3>예약 관리</h3>
+            <div class="tab-menu">
+                <button class="active">예약 확정</button>
+                <button>취소 완료</button>
             </div>
 
-            <!-- 2번 패키지 -->
-            <div class="package_card">
-                <div class="tag_list">
-                    <span>예약 즉시 확정</span>
-                    <span>24시간 전 취소 가능</span>
-                    <span>실물 티켓 교환 필수</span>
-                    <span>지정일 날짜에만 유효</span>
+            <div class="reservation-list">
+                <div class="reservation-item">
+                    <div class="thumbnail"></div>
+                    <div class="reservation-info">
+                        <h4>오사카 우메다 스카이 빌딩 & 우메다 공중정원 전망대 입장권</h4>
+                        <p>패키지 옵션: 입장권</p>
+                        <p>예약 번호: 12345551</p>
+                        <div class="price">₩ 19,100</div>
+                        <button class="details-btn">상세 보기</button>
+                    </div>
                 </div>
 
-                <div class="package_content">
-                    <p class="package_title">[SET] 입장권 + 하트 자물쇠</p>
-                    <div class="price_select">
-                        <p>패키지 정보 ></p>
-                        <span>₩ 31,500</span>
-                        <button>선택하기</button>
+                <div class="reservation-item">
+                    <div class="thumbnail"></div>
+                    <div class="reservation-info">
+                        <h4>오사카 우메다 스카이 빌딩 & 우메다 공중정원 전망대 입장권</h4>
+                        <p>패키지 옵션: 입장권</p>
+                        <p>예약 번호: 12345551</p>
+                        <div class="price">₩ 19,100</div>
+                        <button class="details-btn">상세 보기</button>
                     </div>
                 </div>
             </div>
+        </main>
+  </div>
+  <!-- 내정보 끝 -->
 
-            <!-- 3번 패키지 -->
-            <div class="package_card">
-                <div class="tag_list">
-                    <span>예약 즉시 확정</span>
-                    <span>24시간 전 취소 가능</span>
-                    <span>실물 티켓 교환 필수</span>
-                    <span>지정일 날짜에만 유효</span>
-                </div>
-
-                <div class="package_content">
-                    <p class="package_title">[SET] 입장권 + 유카타 체험 (유카타 증정 포함)</p>
-                    <div class="price_select">
-                        <p>패키지 정보 ></p>
-                        <span>₩ 114,500</span>
-                        <button>선택하기</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    
-    
-
-    <!-- 기업정보 영역 시작 -->
+      <!-- 기업정보 영역 시작 -->
     <section class="company-info-section">
         <div class="company-info-container">
 
@@ -272,7 +192,6 @@
                 }
         });
     </script>
-
-
+    
 </body>
 </html>
