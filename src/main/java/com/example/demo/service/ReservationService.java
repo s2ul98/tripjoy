@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 
 import com.example.demo.dto.ReservationRequestDto;
@@ -7,6 +9,7 @@ import com.example.demo.dto.ReservationResponseDto;
 import com.example.demo.entity.Company;
 import com.example.demo.entity.Reservation;
 import com.example.demo.entity.User;
+
 
 public interface ReservationService {
 
@@ -24,6 +27,9 @@ public interface ReservationService {
 	 
 	// 예약 삭제
 	void remove(String id);
+	
+	List<ReservationResponseDto> findByUserId(String userId);
+
 	
 	default Reservation dtoToEntity(ReservationRequestDto dto, User user, Company company) {
 		Reservation entity = Reservation.builder()

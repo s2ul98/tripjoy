@@ -12,16 +12,16 @@
     <header class="header animated headroom--top headroom--not-bottom">
         
         <!-- 상단 메뉴바 시작 -->
-        <nav class="hd_wrap center">
+       <nav class="hd_wrap center" xmlns:th="http://www.thymeleaf.org">
             <h1>
-                <a href="/html/main.html">
+                <a href="/">
                     <img src="/imgs/logo/logow.svg" alt="트립조이">
                 </a>
             </h1>
 
             <ul>
-                <li><a href="../html/sub_1.html">인기 국가</a></li>
-                <li><a href="../html/sub_1_1.html">인기 도시</a></li>
+				<li><a href="#">인기 국가</a></li>
+				<li><a href="/sub_1_1">인기 도시</a></li>
                 <li><a href="#">인기 액티비티</a></li>
                 <!-- <li><a href="">둘러보기</a></li> -->
             </ul>
@@ -42,8 +42,19 @@
                 </select></li>
 
                 <li><a href="">FAQ</a></li>
-                <li><a href="">내 정보</a></li> 
-                <li id="login"><a href="../html/login.html">로그인 / 회원가입</a></li>
+                 <li><a href="/reservation_list">내 정보</a></li>  
+                
+				<!-- 로그인 안 했을 때 -->
+				<li th:if="${#authentication == null or #authentication.name == 'anonymousUser'}">
+				    <a href="/login">로그인 / 회원가입</a>
+				</li>
+
+				 <!-- 로그인 했을 때 -->
+				 <li th:if="${#authentication != null and #authentication.name != 'anonymousUser'}">
+				     <span th:text="${#authentication.name}">사용자</span>님 환영합니다!
+				     <a href="/logout">로그아웃</a>
+				 </li>
+				 
             </ul>
 
         </nav>
@@ -67,7 +78,7 @@
     <!-- 블루 박스 끝 -->
 
     <!-- main banner img box 시작 -->
-    <div class="main_banner_box">
+    <div class="main_banner_box" style="background-image: url('/imgs/sub2/banner.svg');">
         <div class="banner_overlay">
 
             <div class="banner_text">
@@ -90,11 +101,11 @@
         <div class="product_list">
 
             <div class="product_card">
-                <div class="product_img">
+                <div class="product_img" style="background-image: url('/imgs/sub2/우메다.webp');">
                     <span class="small_text">예약 즉시 확정</span>
                 </div>
                 <div class="product_info">
-                    <a href="../html/sub_3.html">
+                    <a href="sub_3">
                     <p class="product_location">전망대 · 오사카</p>
                     <p class="product_title">오사카 우메다 스카이 빌딩 &<br>우메다 공중정원 전망대 입장권</p>
                     <p class="product_price">₩ 19,100 ~</p></a>
@@ -102,7 +113,7 @@
             </div>
 
             <div class="product_card">
-                <div class="product_img">
+                <div class="product_img" style="background-image: url('/imgs/sub2/유니버셜.webp');">
                     <span class="small_text">예약 즉시 확정<br><span class="free_cancel">무료 취소</span></span>
                 </div>
                 <div class="product_info">
@@ -113,7 +124,7 @@
             </div>
 
             <div class="product_card">
-                <div class="product_img">
+                <div class="product_img" style="background-image: url('/imgs/sub2/유니버셜.webp');">
                     <span class="small_text">예약 즉시 확정</span>
                 </div>
                 <div class="product_info">
@@ -124,7 +135,7 @@
             </div>
 
             <div class="product_card">
-                <div class="product_img">
+                <div class="product_img" style="background-image: url('/imgs/sub2/유니버셜.webp');">
                     <span class="small_text">예약 즉시 확정</span>
                 </div>
                 <div class="product_info">
@@ -146,7 +157,7 @@
         <div class="product_list">
 
             <div class="product_card">
-                <div class="product_img">
+                <div class="product_img" style="background-image: url('/imgs/sub2/유니버셜.webp');">
                     <span class="small_text">예약 즉시 확정</span>
                 </div>
                 <div class="product_info">
@@ -157,7 +168,7 @@
             </div>
 
             <div class="product_card">
-                <div class="product_img">
+                <div class="product_img" style="background-image: url('/imgs/sub2/유니버셜.webp');">
                     <span class="small_text">예약 즉시 확정<br><span class="free_cancel">무료 취소</span></span>
                 </div>
                 <div class="product_info">
@@ -168,7 +179,7 @@
             </div>
 
             <div class="product_card">
-                <div class="product_img">
+                <div class="product_img" style="background-image: url('/imgs/sub2/유니버셜.webp');">
                     <span class="small_text">예약 즉시 확정</span>
                 </div>
                 <div class="product_info">
@@ -179,7 +190,7 @@
             </div>
 
             <div class="product_card">
-                <div class="product_img">
+                <div class="product_img" style="background-image: url('/imgs/sub2/유니버셜.webp');">
                     <span class="small_text">예약 즉시 확정</span>
                 </div>
                 <div class="product_info">

@@ -10,16 +10,16 @@
     
     <header class="header animated headroom--top headroom--not-bottom">
         <!-- 상단 메뉴바 시작 -->
-        <nav class="hd_wrap center">
+		<nav class="hd_wrap center" xmlns:th="http://www.thymeleaf.org">
             <h1>
-                <a href="/html/main.html">
+                <a href="/">
                     <img src="/imgs/logo/logo.svg" alt="트립조이">
                 </a>
             </h1>
 
             <ul>
-                <li><a href="/sub_1.html">인기 국가</a></li>
-                <li><a href="/sub_1_1.html">인기 도시</a></li>
+                <li><a href="#">인기 국가</a></li>
+                <li><a href="/sub_1_1">인기 도시</a></li>
                 <li><a href="#">인기 액티비티</a></li>
                 <!-- <li><a href="">둘러보기</a></li> -->
             </ul>
@@ -40,8 +40,20 @@
                 </select></li>
 
                 <li><a href="">FAQ</a></li>
-                <li><a href="">내 정보</a></li> 
-                <li id="login"><a href="/login.html">로그인 / 회원가입</a></li>
+                <li><a href="/reservation_list">내 정보</a></li> 
+				
+				<!-- 로그인 안 했을 때 -->
+				<li th:if="${#authentication == null or #authentication.name == 'anonymousUser'}">
+				    <a href="/login">로그인 / 회원가입</a>
+				</li>
+
+				 <!-- 로그인 했을 때 -->
+				 <li th:if="${#authentication != null and #authentication.name != 'anonymousUser'}">
+				     <span th:text="${#authentication.name}">사용자</span>님 환영합니다!
+				     <a href="/logout">로그아웃</a>
+				 </li>
+
+				</ul>
             </ul>
 
         </nav>
@@ -95,19 +107,19 @@
             <div class="main_container_box">
 
                 <div class="card">
-                    <img src="../imgs/main/paris.jpg" alt="파리">
+                    <img src="/imgs/sub1/s5.png" alt="파리">
                 </div>
 
                 <div class="card">
-                    <img src="../imgs/main/cebu.jpg" alt="세부">
+                    <img src="/imgs/main/cebu.jpg" alt="세부">
                 </div>
 
                 <div class="card">
-                    <img src="../imgs/main/newyork.jpg" alt="뉴욕">
+                    <img src="/imgs/main/newyork.jpg" alt="뉴욕">
                 </div>
 
                 <div class="card">
-                    <img src="../imgs/main/bali.jpg" alt="발리">
+                    <img src="/imgs/main/bali.jpg" alt="발리">
                 </div>
 
             </div>
@@ -154,23 +166,23 @@
                 <div class="container3_container">
                     
                     <div class="container3_card">
-                        <img src="" alt="">
+                        <img src="/imgs/main/m11.png" alt="사진1">
                     </div>
 
                     <div class="container3_card">
-                        <img src="" alt="">
+                        <img src="/imgs/main/m12.png" alt="사진2">
                     </div>
 
                     <div class="container3_card">
-                        <img src="" alt="">
+                        <img src="/imgs/main/m13.png" alt="사진3">
                     </div>
 
                     <div class="container3_card">
-                        <img src="" alt="">
+                        <img src="/imgs/main/m14.png" alt="사진3">
                     </div>
 
                     <div class="container3_card">
-                        <img src="" alt="">
+                        <img src="/imgs/main/m15.png" alt="사진4">
                     </div>
                     
                 </div>
@@ -187,15 +199,15 @@
 
                 <div class="container4_container">
                     <div class="container4_card">
-                        <img src="imgs/promo1.jpg" alt="프로모션1">
+                        <img src="/imgs/main/m21.png" alt="프로모션1">
                     </div>
 
                     <div class="container4_card highlight">
-                        <img src="imgs/promo2.jpg" alt="프로모션2">
+                        <img src="/imgs/main/m22.png" alt="프로모션2">
                     </div>
 
                     <div class="container4_card">
-                        <img src="imgs/promo3.jpg" alt="프로모션3">
+                        <img src="/imgs/main/m23.png" alt="프로모션3">
                     </div>
                 </div>
 
@@ -295,19 +307,19 @@
             // 메인 컨테이너 2
             const data = {
                 '힐링': [
-                    { title: '숲속 명상', img: 'forest.jpg' },
-                    { title: '스파 테라피', img: 'spa.jpg' },
-                    { title: '요가 클래스', img: 'yoga.jpg' }
+                    { title: '#', img: 'main/m4.png'},
+                    { title: '#', img: 'main/m5.png' },
+                    { title: '#', img: 'main/m6.png' }
                 ],
                 '자연': [
-                { title: '산악 하이킹', img: 'mountain.jpg' },
-                { title: '강가 피크닉', img: 'river.jpg' },
-                { title: '숲속 캠핑', img: 'camping.jpg' }
+                { title: '#', img: 'main/m7.png' },
+                { title: '#', img: 'main/m8.png' },
+                { title: '#', img: 'main/m9.png' }
                 ],
                 '하늘': [
-                { title: '패러글라이딩', img: 'paragliding.jpg' },
-                { title: '열기구 체험', img: 'balloon.jpg' },
-                { title: '스카이다이빙', img: 'skydiving.jpg' }
+                { title: '패러글라이딩', img: 'main/m1.png' },
+                { title: '열기구 체험', img: 'main/m2.png' },
+                { title: '스카이다이빙', img: 'main/m3.png' }
                 ]
             };
 

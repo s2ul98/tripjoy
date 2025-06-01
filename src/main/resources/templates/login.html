@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +8,20 @@
     <script src="/js/login.js"></script>
 </head>
 <body>
+	
 
      <header class="header animated headroom--top headroom--not-bottom">
         <!-- 상단 메뉴바 시작 -->
         <nav class="hd_wrap center">
             <h1>
-                <a href="/html/main.html">
+                <a href="/">
                     <img src="/imgs/logo/logo.svg" alt="트립조이">
                 </a>
             </h1>
 
             <ul>
-                <li><a href="../html/sub_1.html">인기 국가</a></li>
-                <li><a href="../html/sub_1_1.html">인기 도시</a></li>
+                <li><a href="#">인기 국가</a></li>
+                <li><a href="/sub_1_1">인기 도시</a></li>
                 <li><a href="#">인기 액티비티</a></li>
                 <!-- <li><a href="">둘러보기</a></li> -->
             </ul>
@@ -42,7 +43,7 @@
 
                 <li><a href="">FAQ</a></li>
                 <li><a href="">내 정보</a></li> 
-                <li id="login"><a href="../html/login.html">로그인 / 회원가입</a></li>
+                <li id="login"><a href="/login">로그인 / 회원가입</a></li>
             </ul>
 
         </nav>
@@ -61,11 +62,15 @@
 
             <!-- id,pw 입력창 -->
             <div class="login_form">
-                <div class="login_box">
+				
+				<div th:if="${errorMessage}" th:text="${errorMessage}" style="color: red; margin-bottom: 10px;"></div>
+
+				
+				<form action="/login" method="post" class="login_box">
 
                     <!-- id -->
                     <div class="input_item id on" id="input_item_id">
-                        <input type="text" id="id" name="id" accesskey="L" maxlength="41" autocapitalize="none" value="" title="아이디" class="input_id" aria-label="아이디 또는 전화번호">
+                        <input type="text" id="id" name="username" accesskey="L" maxlength="41" autocapitalize="none" value="" title="아이디" class="input_id" aria-label="아이디 또는 전화번호">
                         <label for="id" class="text_label" id="id_label" aria-hidden="true">이메일</label>
                         <!-- <button type="button" class="btn_delete" id="id_clear" style="display: block;">
                             <span class="icon_delete"><span class="blind">삭제</span></span>
@@ -74,7 +79,7 @@
 
                     <!-- pw -->
                     <div class="input_item pw on" id="input_item_pw">
-                        <input type="password" id="pw" name="pw" title="비밀번호" class="input_pw" maxlength="16" aria-label="비밀번호">
+                        <input type="password" id="pw" name="password" title="비밀번호" class="input_pw" maxlength="16" aria-label="비밀번호">
                         <label for="pw" class="text_label" id="pw_label" aria-hidden="true">비밀번호</label>
                         
                         <!-- 보기/숨기기 아이콘 -->
@@ -86,25 +91,28 @@
                         <!-- <button type="button" class="btn_delete" id="pw_clear" style="display: block;">
                             <span class="icon_delete"><span class="blind">삭제</span></span>
                         </button> -->
-                    </div>
+						
+						<!-- 로그인 상태 유지 -->
+			            <div class="login_keep_wrap" id="login_keep_wrap">
+			                <div class="keep_check">
+			                    <input type="checkbox" id="keep" name="nvlong" class="input_keep" value="off">
+			                    <label for="keep" class="keep_text">아이디/비밀번호 저장</label>
+			                </div>
+			            </div>
+
+			            <!-- 로그인 버튼 -->
+			            <div class="btn_login_wrap">
+			                <button type="submit" class="btn_login next_step nlog-click" id="log.login">
+			                    <span class="btn_text" id="log.login.text">로그인</span>     
+			                </button>
+			            </div>
+					</form>
+
 
                 </div>
             </div>
 
-            <!-- 로그인 상태 유지 -->
-            <div class="login_keep_wrap" id="login_keep_wrap">
-                <div class="keep_check">
-                    <input type="checkbox" id="keep" name="nvlong" class="input_keep" value="off">
-                    <label for="keep" class="keep_text">아이디/비밀번호 저장</label>
-                </div>
-            </div>
-
-            <!-- 로그인 버튼 -->
-            <div class="btn_login_wrap">
-                <button type="submit" class="btn_login next_step nlog-click" id="log.login">
-                    <span class="btn_text" id="log.login.text">로그인</span>     
-                </button>
-            </div>
+            
 
             <!-- 소셜 로그인 -->
             <div class="social_login_wrap" id="passkey.divider">
@@ -163,7 +171,7 @@
     <div style="text-align: center; font-size: 13px; color: #aaa; margin-top: 20px;">
         <a href="#">비밀번호 찾기</a> |
         <a href="#">아이디 찾기</a> |
-        <a href="../html/signup.html">회원가입</a>
+		<a href="/signup">회원가입</a>
     </div>
 
     <!-- 로그인 끝 -->

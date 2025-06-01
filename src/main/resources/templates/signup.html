@@ -12,16 +12,16 @@
     <header class="header animated headroom--top headroom--not-bottom">
 
         <!-- 상단 메뉴바 시작 -->
-        <nav class="hd_wrap center">
+        <nav class="hd_wrap center" xmlns:th="http://www.thymeleaf.org">
             <h1>
-                <a href="/html/main.html">
+                <a href="/">
                     <img src="/imgs/logo/logo.svg" alt="트립조이">
                 </a>
             </h1>
 
             <ul>
-                <li><a href="../html/sub_1.html">인기 국가</a></li>
-                <li><a href="../html/sub_1_1.html">인기 도시</a></li>
+				<li><a href="#">인기 국가</a></li>
+				<li><a href="/sub_1_1">인기 도시</a></li>
                 <li><a href="#">인기 액티비티</a></li>
                 <!-- <li><a href="">둘러보기</a></li> -->
             </ul>
@@ -42,8 +42,19 @@
                 </select></li>
 
                 <li><a href="">FAQ</a></li>
-                <li><a href="">내 정보</a></li> 
-                <li id="login"><a href="../html/login.html">로그인 / 회원가입</a></li>
+                <li><a href="/reservation_list">내 정보</a></li> 
+                
+				<!-- 로그인 안 했을 때 -->
+				<li th:if="${#authentication == null or #authentication.name == 'anonymousUser'}">
+				    <a href="/login">로그인 / 회원가입</a>
+				</li>
+
+				 <!-- 로그인 했을 때 -->
+				 <li th:if="${#authentication != null and #authentication.name != 'anonymousUser'}">
+				     <span th:text="${#authentication.name}">사용자</span>님 환영합니다!
+				     <a href="/logout">로그아웃</a>
+				 </li>>
+				 
             </ul>
 
         </nav>
@@ -58,97 +69,90 @@
         <h1>회원가입</h1>
 
         <!-- 회원가입 -->
-        <div class="container">
-        <div class="inner">
 
-            <div class="content">
-            <form action="">
+		<div class="container">
+		  <div class="inner">
+		    <div class="content">
+		      <form action="/signup" method="post">
+		        <!-- 이메일 -->
+		        <div class="input_item">
+		          <label for="email" class="text_label">이메일</label>
+		          <div class="email_flex">
+		            <input type="text" id="email" name="id" placeholder="s2ul98" required>
+		            <div class="domain_box">
+		              <span class="at">@</span>
+		              <select id="email_domain" name="email_domain" required>
+		                <option value="naver.com">naver.com</option>
+		                <option value="gmail.com">gmail.com</option>
+		                <option value="daum.net">daum.net</option>
+		                <option value="">직접 입력</option>
+		              </select>
+		            </div>
+		          </div>
+		        </div>
 
-                <!-- 이메일 -->
-                <div class="input_item">
-                    <label for="email" class="text_label">이메일</label>
-                    <div class="email_flex">
-                        <input type="text" id="email" placeholder="s2ul98" required>
-                        
-                        <div class="domain_box">
-                            <span class="at">@</span>
-                            <select id="email_domain" name="email_domain" required>
-                                <option value="naver.com">naver.com</option>
-                                <option value="gmail.com">gmail.com</option>
-                                <option value="daum.net">daum.net</option>
-                                <option value="">직접 입력</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+		        <!-- 비밀번호 -->
+		        <div class="input_item">
+		          <input type="password" id="password" name="password" placeholder="영문/특수문자/숫자 중 2가지 이상 혼합 8~20자" required>
+		          <label for="password" class="text_label">비밀번호</label>
+		          <button type="button" class="btn_view" id="togglePassword1">
+		            <img src="../imgs/icon/eye-off.svg" alt="비밀번호 숨김" id="eyeIcon1">
+		          </button>
+		        </div>
 
-                <!-- 비밀번호 -->
-                <div class="input_item">
-                    <input type="password" id="password" placeholder="영문/특수문자/숫자 중 2가지 이상 혼합 8~20자" required>
-                    <label for="password" class="text_label">비밀번호</label>
-                    <button type="button" class="btn_view" id="togglePassword1">
-                        <img src="../imgs/icon/eye-off.svg" alt="비밀번호 숨김" id="eyeIcon1">
-                    </button>
-                </div>
+		        <!-- 비밀번호 재입력 -->
+		        <div class="input_item">
+		          <input type="password" id="password_confirm" placeholder="비밀번호 재입력" required>
+		          <label for="password_confirm" class="text_label">비밀번호 재입력</label>
+		          <button type="button" class="btn_view" id="togglePassword2">
+		            <img src="../imgs/icon/eye-off.svg" alt="비밀번호 숨김" id="eyeIcon2">
+		          </button>
+		        </div>
 
-                <!-- 비밀번호 재입력 -->
-                <div class="input_item">
-                    <input type="password" id="password_confirm" placeholder="영문/특수문자/숫자 중 2가지 이상 혼합 8~20자" required>
-                    <label for="password_confirm" class="text_label">비밀번호 재입력</label>
-                    <button type="button" class="btn_view" id="togglePassword2">
-                        <img src="../imgs/icon/eye-off.svg" alt="비밀번호 숨김" id="eyeIcon2">
-                    </button>
-                </div>
+		        <!-- 이름 -->
+		        <div class="input_item">
+		          <input type="text" id="name" name="userName" placeholder=" " required>
+		          <label for="name" class="text_label">이름</label>
+		        </div>
 
-                <!-- 이름 -->
-                <div class="input_item">
-                    <input type="text" id="name" placeholder=" " required>
-                    <label for="name" class="text_label">이름</label>
-                </div>
+		        <!-- 생년월일 -->
+		        <div class="input_item">
+		          <input type="text" id="birth" name="birthDate" placeholder="8자리(YYYY/MM/dd)" required>
+		          <label for="birth" class="text_label">생년월일</label>
+		        </div>
 
-                <!-- 생년월일 -->
-                <div class="input_item">
-                    <input type="text" id="birth" placeholder="8자리(YYYY/MM/dd)" required>
-                    <label for="birth" class="text_label">생년월일</label>
-                </div>
+		        <!-- 닉네임 -->
+		        <div class="input_item">
+		          <input type="text" id="nickname" name="nickname" placeholder=" " required>
+		          <label for="nickname" class="text_label">닉네임</label>
+		        </div>
 
-                <!-- 닉네임 -->
-                <div class="input_item">
-                    <input type="text" id="nickname" placeholder=" " required>
-                    <label for="nickname" class="text_label">닉네임</label>
-                </div>
+		        <!-- 휴대폰 번호 -->
+		        <div class="input_item">
+		          <input type="text" id="phone" name="phone" placeholder="‘-’를 제외한 숫자만 입력" required>
+		          <label for="phone" class="text_label">휴대폰 번호</label>
+		        </div>
 
-                <!-- 휴대폰 번호 -->
-                <div class="input_item">
-                    <input type="text" id="phone" placeholder="‘-’를 제외한 숫자만 입력" required>
-                    <label for="phone" class="text_label">휴대폰 번호</label>
-                </div>
-
-                <div class="terms_box">
-                    <ul class="terms_list">
-
-                        <li><label><input type="checkbox" id="check_all"> 약관 전체 동의</label></li>
-                        <li><label><input type="checkbox" class="check_item"> (필수) 본인은 만 14세 이상입니다</label></li>
-                        <li><label><input type="checkbox" class="check_item"> (필수) 서비스 이용약관 동의</label></li>
-                        <li><label><input type="checkbox" class="check_item"> (필수) 개인정보 수집 및 이용 동의</label></li>
-                        <li><label><input type="checkbox" class="check_item"> (선택) 광고성 정보 수신 전체 동의</label></li>
-                    
-                    </ul>
-
-                    <p class="terms_notice">
-                        마케팅 정보 수집에 동의하시면, <br>이벤트 및 할인 혜택 안내를 빠르게 받아 보실 수 있습니다.
-                    </p>
-
-                    <button class="submit_btn">가입하기</button>
-                </div>
+		        <div class="terms_box">
+		          <ul class="terms_list">
+		            <li><label><input type="checkbox" id="check_all"> 약관 전체 동의</label></li>
+		            <li><label><input type="checkbox" class="check_item"> (필수) 본인은 만 14세 이상입니다</label></li>
+		            <li><label><input type="checkbox" class="check_item"> (필수) 서비스 이용약관 동의</label></li>
+		            <li><label><input type="checkbox" class="check_item"> (필수) 개인정보 수집 및 이용 동의</label></li>
+		            <li><label><input type="checkbox" class="check_item"> (선택) 광고성 정보 수신 전체 동의</label></li>
+		          </ul>
+		          <p class="terms_notice">
+		            마케팅 정보 수집에 동의하시면, <br>이벤트 및 할인 혜택 안내를 빠르게 받아 보실 수 있습니다.
+		          </p>
+		          <button type="submit" class="submit_btn">가입하기</button>
+		        </div>
+		      </form>
+		    </div>
+		  </div>
+		</div>
 
 
-            </form>
-            </div>
-            
-        </div>
-        </div>
-
+		
             <script>
             // 메뉴바
                     window.addEventListener('scroll', () => {

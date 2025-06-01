@@ -1,0 +1,268 @@
+.header {
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 101;
+    transition: all 0.5s;
+    background-color: transparent;
+}
+
+.header.headroom--not-top {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.hd_wrap {
+    display: flex;
+    justify-content: space-between;
+    height: 103px;
+    align-items: center;
+}
+
+.hd_wrap > ul {
+    display: flex;
+    list-style: none;
+}
+
+.hd_wrap > ul > li {
+    margin-right: 30px;
+}
+
+.hd_wrap > ul > li:last-child {
+    margin-right: 0px;
+}
+
+.hd_wrap > ul > li > a {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    text-decoration: none; 
+}
+
+.hd_wrap > ul > li > a::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    transition: all 0.2s;
+}
+
+.hd_wrap > ul > li > a:hover::after {
+    width: 100%;
+}
+
+.hd_wrap h1 img {
+  display: block;
+  height: 30px; 
+  margin-left: 170px;
+}
+
+#menu2 {
+    margin: 100px;
+}
+
+#menu2 select {
+  font-size: 16px;
+  color: #000000;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* #login:hover {
+  color: #3677F6;
+  border-color: #3677F6;
+} */
+
+/*  예약 리스트/내정보 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 150px auto;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.profile {
+  flex: 0 0 250px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+.profile .profile-pic {
+  width: 100px;
+  height: 100px;
+  background: #ddd;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
+
+.profile h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.profile h2 span {
+  color: #999;
+  font-size: 14px;
+}
+
+.profile .email {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.side-menu ul {
+  list-style: none;
+}
+
+.side-menu li {
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+}
+
+.side-menu li:first-child {
+  border-top: none;
+}
+.reservation-detail {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+}
+
+.reservation-detail .title {
+  color: #3677f6;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.reservation-detail .info p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.reservation-detail .info p strong {
+  font-weight: 600;
+}
+
+
+/* 기업정보 영역 */
+.company-info-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+}
+
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin-bottom: 40px;
+}
+
+.footer-left {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  min-width: 150px;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.footer-list a {
+  text-decoration: none;
+  color: #666;
+}
+
+.footer-right {
+  min-width: 200px;
+}
+
+.payment-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.payment-list img {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* foorter */
+.footer {
+    background-color: #242b36;
+    padding: 65px 0;
+    margin-top: 100px;
+}
+
+.main_center {
+  padding: 0;
+  margin-left: 170px;
+}
+
+.footer p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #f4f4f4;
+    margin: 30px 0px;
+    line-height: 160%;
+}
+.footer small {
+    font-size: 14px;
+    font-weight: 400;
+    color: #b7b7b7;
+}

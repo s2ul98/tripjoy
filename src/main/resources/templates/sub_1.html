@@ -10,16 +10,16 @@
     
     <header class="header animated headroom--top headroom--not-bottom">
         <!-- 상단 메뉴바 시작 -->
-        <nav class="hd_wrap center">
+       <nav class="hd_wrap center" xmlns:th="http://www.thymeleaf.org">
             <h1>
-                <a href="/html/main.html">
+                <a href="/">
                     <img src="/imgs/logo/logo.svg" alt="트립조이">
                 </a>
             </h1>
 
             <ul>
-                <li><a href="../html/sub_1.html">인기 국가</a></li>
-                <li><a href="../html/sub_1_1.html">인기 도시</a></li>
+				<li><a href="#">인기 국가</a></li>
+				<li><a href="/sub_1_1">인기 도시</a></li>
                 <li><a href="#">인기 액티비티</a></li>
                 <!-- <li><a href="">둘러보기</a></li> -->
             </ul>
@@ -40,8 +40,19 @@
                 </select></li>
 
                 <li><a href="">FAQ</a></li>
-                <li><a href="">내 정보</a></li> 
-                <li id="login"><a href="../html/login.html">로그인 / 회원가입</a></li>
+                <li><a href="/reservation_list">내 정보</a></li>  
+                
+				<!-- 로그인 안 했을 때 -->
+				<li th:if="${#authentication == null or #authentication.name == 'anonymousUser'}">
+				    <a href="/login">로그인 / 회원가입</a>
+				</li>
+
+				 <!-- 로그인 했을 때 -->
+				 <li th:if="${#authentication != null and #authentication.name != 'anonymousUser'}">
+				     <span th:text="${#authentication.name}">사용자</span>님 환영합니다!
+				     <a href="/logout">로그아웃</a>
+				 </li>
+				 
             </ul>
 
         </nav>

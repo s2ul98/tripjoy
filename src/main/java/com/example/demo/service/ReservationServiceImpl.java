@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,20 +35,22 @@ public class ReservationServiceImpl implements ReservationService {
 	
 	@Override
 	public String register(ReservationRequestDto dto) {
-		
-		User user = userRepository.findById(dto.getUserId())
-                .orElseThrow(() -> new IllegalArgumentException("User not found"));
-		
-        Company company = companyRepository.findById(dto.getCompanyId())
-                .orElseThrow(() -> new IllegalArgumentException("Company not found"));
-        
+	    System.out.println("💡 userId: " + dto.getUserId());
+	    System.out.println("💡 companyId: " + dto.getCompanyId());
 
-        Reservation entity = dtoToEntity(dto, user, company);
-        
-        reservationRepository.save(entity);
+	    User user = userRepository.findById(dto.getUserId())
+	            .orElseThrow(() -> new IllegalArgumentException("User not found"));
 
-        return entity.getId();
+	    Company company = companyRepository.findById(dto.getCompanyId())
+	            .orElseThrow(() -> new IllegalArgumentException("Company not found"));
+
+	    Reservation entity = dtoToEntity(dto, user, company);
+
+	    reservationRepository.save(entity);
+
+	    return entity.getId();
 	}
+
 
 	@Override
 	public Page<ReservationResponseDto> getList(int pageNumber) {
@@ -108,6 +111,15 @@ public class ReservationServiceImpl implements ReservationService {
         }
 
 		
+	}
+
+	@Override
+	public List<ReservationResponseDto> findByUserId(String userId) {
+		   List<Reservation> reservations = reservationRepository.findByUser_Id(userId);
+
+		    return reservations.stream()
+		            .map(this::entityToDto)
+		            .toList();
 	}
 	
 	

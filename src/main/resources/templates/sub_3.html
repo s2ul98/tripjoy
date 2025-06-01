@@ -12,16 +12,16 @@
     <header class="header animated headroom--top headroom--not-bottom">
         
         <!-- 상단 메뉴바 시작 -->
-        <nav class="hd_wrap center">
+        <nav class="hd_wrap center" xmlns:th="http://www.thymeleaf.org">
             <h1>
-                <a href="/html/main.html">
+                <a href="/">
                     <img src="/imgs/logo/logo.svg" alt="트립조이">
                 </a>
             </h1>
 
             <ul>
-                <li><a href="../html/sub_1.html">인기 국가</a></li>
-                <li><a href="../html/sub_1_1.html">인기 도시</a></li>
+				<li><a href="#">인기 국가</a></li>
+				<li><a href="/sub_1_1">인기 도시</a></li>
                 <li><a href="#">인기 액티비티</a></li>
                 <!-- <li><a href="">둘러보기</a></li> -->
             </ul>
@@ -42,8 +42,19 @@
                 </select></li>
 
                 <li><a href="">FAQ</a></li>
-                <li><a href="">내 정보</a></li> 
-                <li id="login"><a href="../html/login.html">로그인 / 회원가입</a></li>
+                <li><a href="/reservation_list">내 정보</a></li>  
+                
+				<!-- 로그인 안 했을 때 -->
+				<li th:if="${#authentication == null or #authentication.name == 'anonymousUser'}">
+				    <a href="/login">로그인 / 회원가입</a>
+				</li>
+
+				 <!-- 로그인 했을 때 -->
+				 <li th:if="${#authentication != null and #authentication.name != 'anonymousUser'}">
+				     <span th:text="${#authentication.name}">사용자</span>님 환영합니다!
+				     <a href="/logout">로그아웃</a>
+				 </li>
+				 
             </ul>
 
         </nav>
@@ -95,51 +106,56 @@
                     </div>
                 </div>
 
-                <!-- 펼침 -->
-                <div class="reservation_section">
-                    
-                    <!-- 구분선 -->
-                    <div class="package_section_line"></div>
+				<!-- 펼침 -->
+				<div class="reservation_section">
 
-                    <h3>날짜 & 수량 선택</h3>
+				  <!-- 구분선 -->
+				  <div class="package_section_line"></div>
 
-                    <div class="reservation_content">
+				  <h3>날짜 & 수량 선택</h3>
 
-                        <!-- 왼쪽 : 달력 -->
-                        <div class="calendar_box">
-                            <label>방문 일자 선택</label>
-                            <input type="date" class="calendar">
-                        </div>
+				  <!-- form 시작: 여기에 예약자 정보, 달력, 수량, 금액, 버튼 전부 포함 -->
+				  <form action="/reservation" method="post" class="reservation_form">
+				    <!-- 숨겨진 예약 정보 -->
+				    <input type="hidden" name="id" th:value="${dto.id}">
+				    <input type="hidden" name="userId" th:value="${dto.userId}">
+				    <input type="hidden" name="companyId" th:value="${dto.companyId}">
 
-                        <!-- 오른쪽 : 수량 -->
-                        <div class="info_box">
+				    <div class="reservation_content">
+				      <!-- 왼쪽 : 달력 -->
+				      <div class="calendar_box">
+				        <label>방문 일자 선택</label>
+				        <input type="date" class="calendar" name="activityDate" th:value="${dto.activityDate}" required>
+				      </div>
 
-                            <label>수량 선택</label>
-                            <div class="quantity_select">
-                                <button class="minus_btn">-</button>
-                                <span class="quantity">1</span>
-                                <button class="plus_btn">+</button>
-                            </div>
-                            
-                        </div>
-                    </div>
+				      <!-- 오른쪽 : 수량 -->
+				      <div class="info_box">
+				        <label>수량 선택</label>
+				        <div class="quantity_select">
+				          <button type="button" class="minus_btn">-</button>
+				          <span class="quantity">1</span>
+				          <button type="button" class="plus_btn">+</button>
+				        </div>
+				      </div>
+				    </div>
 
-                    <!-- 구분선 -->
-                    <div class="package_section_line"></div>
+				    <!-- 구분선 -->
+				    <div class="package_section_line"></div>
 
-                    <!-- 하단 : 총 금액 -->
-                    <div class="total_price">
-                        총 금액 <strong>₩ 19,100</strong>
-                    </div>
+				    <!-- 총 금액 -->
+				    <div class="total_price">
+				      총 금액 <strong>₩ 19,100</strong>
+				    </div>
 
-                    <div class="action_btns">
-                        <button class="cart_btn">장바구니 담기</button>
-                        <button class="reserve_btn">예약하기</button>
-                    </div>
-                </div>
-
-
-            </div>
+				    <!-- 버튼들 -->
+				    <div class="action_btns">
+				      <button type="button" class="cart_btn">장바구니 담기</button>
+				      <button type="submit" class="reserve_btn">예약하기</button>
+				    </div>
+				  </form>
+				  <!-- form 끝 -->
+				  </div>
+				</div>
 
             <!-- 2번 패키지 -->
             <div class="package_card">
@@ -179,7 +195,7 @@
                 </div>
             </div>
 
-        </div>
+        
     </div>
     
     

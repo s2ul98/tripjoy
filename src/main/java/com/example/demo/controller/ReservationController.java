@@ -17,7 +17,7 @@ import com.example.demo.dto.ReservationResponseDto;
 import com.example.demo.service.ReservationService;
 
 @Controller
-@RequestMapping("")
+//@RequestMapping("/reservation")
 public class ReservationController {
 	
 	@Autowired
@@ -25,9 +25,11 @@ public class ReservationController {
 	
 //	목록
 	@GetMapping("/list")
-    public void list(@RequestParam(defaultValue = "1", name = "page") int page, Model model) {
+    public String list(@RequestParam(defaultValue = "1", name = "page") int page, Model model) {
         Page<ReservationResponseDto> list = reservationService.getList(page);
         model.addAttribute("list", list);
+        
+        return "reservation_list";
     }
 	
 //	예약 페이지 이동
@@ -40,7 +42,8 @@ public class ReservationController {
     public String registerPost(ReservationRequestDto dto, RedirectAttributes redirectAttributes) {
         String reservationId = reservationService.register(dto);
         redirectAttributes.addFlashAttribute("msg", reservationId);
-        return "redirect:/reservation/list";
+        
+        return "redirect:/list";
     }
     
 //  예약 상세 조회
@@ -53,7 +56,7 @@ public class ReservationController {
         model.addAttribute("page", page);
     }
     
-//  예약 수정 페이지 이동
+//  예약 수정 페이지
     @GetMapping("/modify")
     public void modify(@RequestParam(name = "id") String id, Model model) {
         ReservationResponseDto dto = reservationService.read(id);
@@ -74,5 +77,18 @@ public class ReservationController {
         reservationService.remove(id);
         return "redirect:/reservation/list";
     }
+    
+    @GetMapping("/sub_3")
+    public String showReservationPage(Model model) {
+        ReservationRequestDto dto = new ReservationRequestDto();
+        dto.setUserId("testuser");
+        dto.setCompanyId("company1");
+        dto.setActivityDate(java.time.LocalDate.now().toString());
+        
+        model.addAttribute("dto", dto);
+        
+        return "sub_3";
+    }
+
 
 }

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>즐거움은 미루지 마세요. Tripjoy</title>
-    <link rel="stylesheet" href="/css/reservation_list.css">
-    <script src="/js/reservation_list.js"></script>
+    <link rel="stylesheet" href="/css/reservation.css">
+    <!-- <script src="../js/reservation_list.js"></script> -->
 </head>
 <body>
-
+    
     <header class="header animated headroom--top headroom--not-bottom">
         
         <!-- 상단 메뉴바 시작 -->
@@ -54,7 +54,7 @@
 				     <span th:text="${#authentication.name}">사용자</span>님 환영합니다!
 				     <a href="/logout">로그아웃</a>
 				 </li>
-			 
+				 
             </ul>
 
         </nav>
@@ -80,42 +80,36 @@
             </nav>
         </aside>
 
-        <!-- 예약 관리 영역 -->
-        <main class="reservation">
-            <h3>예약 관리</h3>
-            <div class="tab-menu">
-                <button class="active">예약 확정</button>
-                <button>취소 완료</button>
+        <!-- 예약 상세 -->
+        <div class="reservation-detail">
+            <h3 class="title">예약 확정</h3>
+            
+            <div class="info">
+				
+				<p>
+					<strong>예약 번호 :</strong>
+				    <input type="text" class="form-control" name="id" th:value="${dto.id}" readonly>
+				</p>
+				
+				<p><strong>구매자 ID :</strong>
+					<input type="text" class="form-control" name="userId" th:value="${dto.userId}" readonly>
+				</p>
+				
+				<p><strong>예약일 :</strong>
+					<input type="text" class="form-control" name="activityDate" th:value="${dto.activityDate}" readonly>
+				</p>
+				
+				 <p><strong>예약 생성일 :</strong>
+					 <input type="text" class="form-control" name="createdDate" th:value="${dto.createdDate}" readonly>
+				 </p>
+				 
+				 <p><strong>상태 :</strong>
+					<input type="text" class="form-control" name="status" th:value="${dto.status}" readonly>
+				 </p>
+ 
             </div>
+        </div>
 
-            <div class="reservation-list">
-				<table>
-				      <thead>
-				        <tr>
-				          <th>예약 번호</th>
-				          <th>사용자 ID</th>
-				          <th>업체 ID</th>
-				          <th>예약일</th>
-				          <th>상태</th>
-				          <th>상세</th>
-				        </tr>
-				      </thead>
-					  
-					  <tbody>
-					    <tr th:each="dto : ${reservations}">
-					      <td th:text="${dto.id}"></td>
-					      <td th:text="${dto.userId}"></td>
-					      <td th:text="${dto.companyId}"></td>
-					      <td th:text="${dto.activityDate}"></td>
-					      <td th:text="${dto.status}"></td>
-					      <td><a th:href="@{'/reservation/' + ${dto.id}}">상세보기</a></td>
-					    </tr>
-					  </tbody>
-					  
-				  </table>
-
-            </div>
-        </main>
   </div>
   <!-- 내정보 끝 -->
 
@@ -207,6 +201,6 @@
                 }
         });
     </script>
-    
+
 </body>
 </html>
